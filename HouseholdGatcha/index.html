@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Household Gacha</title>
+    <link rel="stylesheet" href="css/main-screen.css">
+    <link rel="stylesheet" href="css/windows.css">
+    <link rel="stylesheet" href="css/character.css">
+    <link rel="stylesheet" href="css/banners.css">
+    <link rel="stylesheet" href="css/kid-mode.css">
+    <link rel="stylesheet" href="css/taskbar.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/inventory.css">
+    <link rel="stylesheet" href="css/character-select.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/tasks.css">
+    <link rel="stylesheet" href="css/random-reward-popup.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="header-logo">Household Gacha</a>
+        <div id="floating-character-card">
+            <!-- CharacterDisplay will render the character here -->
+        </div>
+        <div class="header-actions">
+            <div class="header-coins">
+                <img src="img/coins-icon.svg" alt="Coins">
+                <span>0</span>
+            </div>
+            <div class="header-points">
+                <img src="img/points-icon.svg" alt="Points">
+                <span id="points-amount">0</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+            <section id="characters" class="character-section">
+                <div class="character-selection">
+                    <div class="character-grid">
+                        <!-- Character cards will be populated here -->
+                    </div>
+                </div>
+            </section>
+
+            <section id="gacha" class="gacha-section">
+                <h2>Current Banners</h2>
+                <div id="banners">
+                    <!-- Banners will be displayed here -->
+                </div>
+                <div id="gacha-result">
+                    <!-- Gacha results will be displayed here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Task Overlay -->
+    <div id="tasks-overlay" class="tasks-overlay window-overlay">
+        <div class="tasks-section window-container">
+            <div class="tasks-header window-header">
+                <h2 class="window-title">Tasks</h2>
+                <button class="admin-panel-close" id="close-tasks-btn">&times;</button>
+            </div>
+            <div class="window-content">
+                <div class="tasks-filters" id="tasks-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                    <button class="filter-btn" data-filter="chores">Chores</button>
+                    <button class="filter-btn" data-filter="education">Education</button>
+                    <button class="filter-btn" data-filter="exercise">Exercise</button>
+                </div>
+                <div id="tasks-content">
+                    <!-- Tasks will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Character creation modal -->
+    <div class="character-modal">
+        <div class="character-modal-content window-container">
+            <h3>Create New Character</h3>
+            <form class="character-form" id="character-form">
+                <div class="form-group">
+                    <label for="character-name">Character Name:</label>
+                    <input type="text" id="character-name" name="name" placeholder="Enter character name" required>
+                </div>
+                <div class="form-group">
+                    <label for="character-type">Character Type:</label>
+                    <select id="character-type" name="type" required>
+                        <option value="adult">Adult</option>
+                        <option value="kid">Kid</option>
+                    </select>
+                </div>
+                <div class="character-form-buttons">
+                    <button type="button" class="cancel-btn">Cancel</button>
+                    <button type="submit" class="create-btn">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Inventory Overlay -->
+    <div class="inventory-overlay window-overlay">
+        <div class="inventory-container window-container">
+            <button class="close-inventory">&times;</button>
+            <div class="inventory">
+                <h3>Inventory</h3>
+                <div class="inventory-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="background">Backgrounds</button>
+                    <button class="filter-btn" data-filter="top">Tops</button>
+                    <button class="filter-btn" data-filter="bottom">Bottoms</button>
+                    <button class="filter-btn" data-filter="footwear">Footwear</button>
+                    <button class="filter-btn" data-filter="overwear">Overwear</button>
+                    <button class="filter-btn" data-filter="accessories">Accessories</button>
+                    <button class="filter-btn" data-filter="headwear">Headwear</button>
+                </div>
+                <div id="inventory-items">
+                    <!-- Inventory items will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts: Load libraries and component logic first -->
+    <script src="js/character.js"></script>
+    <script src="js/character-management.js"></script>
+    <script src="js/currency.js"></script>
+    <script src="js/banner-data.js"></script>
+    <script src="js/banner-utils.js"></script>
+    <script src="js/gacha-ui.js"></script>
+    <script src="js/gacha.js"></script>
+    <script src="js/tasks.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/inventory.js"></script>
+    <script src="js/random-reward-popup.js"></script>
+
+    <!-- Character specific UI/Management -->
+    <script src="js/character-select.js"></script>
+    <script src="js/character-display.js"></script>
+    
+    <!-- Admin Panel (Needs Character Manager) -->
+    <script src="js/admin.js"></script>
+
+    <!-- Taskbar (Needs Admin Panel) -->
+    <script src="js/taskbar.js"></script>
+
+    <!-- Main initialization script (must be last) -->
+    <script src="js/main.js"></script>
+
+    <!-- Windows XP Style Taskbar -->
+    <div class="taskbar">
+        <button class="start-button">
+            <span>Start</span>
+        </button>
+        <div class="task-buttons">
+            <button class="task-button" data-target="gacha">Gacha</button>
+            <button id="open-tasks-btn" class="task-button" data-target="tasks">Tasks</button>
+            <button class="task-button" data-target="inventory">Inventory</button>
+        </div>
+        <div class="system-tray">
+            <span id="current-time">12:00 PM</span>
+        </div>
+    </div>
+
+    <!-- Start Menu -->
+    <div class="start-menu">
+        <div class="start-menu-content">
+            <button id="new-character-btn" class="start-menu-item">
+                <span class="icon">+</span>
+                <span>New Character</span>
+            </button>
+            <button id="rename-character" class="start-menu-item" disabled>
+                <span class="icon">✏️</span>
+                <span>Rename Character</span>
+            </button>
+            <button id="delete-character" class="start-menu-item" disabled>
+                <span class="icon">🗑️</span>
+                <span>Delete Character</span>
+            </button>
+            <button id="admin-panel" class="start-menu-item">
+                <span class="icon">⚙️</span>
+                <span>Admin Panel</span>
+            </button>
+        </div>
+    </div>
+</body>
+</html> 

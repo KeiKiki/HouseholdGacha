@@ -1,0 +1,171 @@
+/* Bluey-themed Kid Mode Styles */
+body.kid-mode {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #4f46e5, #8b5cf6);
+    min-height: 100vh;
+    color: #1f2937;
+}
+
+/* Typography and UI Elements */
+body.kid-mode h1, 
+body.kid-mode h2, 
+body.kid-mode h3, 
+body.kid-mode .header,
+body.kid-mode .currency-display,
+body.kid-mode .header-currency,
+body.kid-mode button {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #fff;
+    background: linear-gradient(135deg, #4f46e5, #8b5cf6);
+    border: 3px solid #fff;
+    border-radius: 20px;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+body.kid-mode button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.125rem;
+    font-weight: bold;
+    cursor: pointer;
+    transform-origin: center;
+}
+
+body.kid-mode button:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Card and Section Styling */
+body.kid-mode .character-card,
+body.kid-mode .inventory,
+body.kid-mode .tasks-section,
+body.kid-mode .gacha-section {
+    background: #fff;
+    border-radius: 30px;
+    padding: 1.5rem 2rem;
+    border: 3px solid #4f46e5;
+    box-shadow: 0 8px 0 rgba(79, 70, 229, 0.2);
+    transition: all 0.3s ease;
+}
+
+body.kid-mode .character-card:hover,
+body.kid-mode .inventory:hover,
+body.kid-mode .tasks-section:hover,
+body.kid-mode .gacha-section:hover {
+    transform: translateY(-4px) rotate(1deg);
+    box-shadow: 0 12px 0 rgba(79, 70, 229, 0.2);
+}
+
+/* Hide Complex UI Elements */
+body.kid-mode .filter-btn[data-filter]:not([data-filter="all"]),
+body.kid-mode .character-controls button:not(#reset-character),
+body.kid-mode .rarity-star,
+body.kid-mode .showcase-star {
+    display: none;
+}
+
+/* Interactive Elements */
+body.kid-mode .character-card:hover,
+body.kid-mode .inventory-item:hover,
+body.kid-mode .task-item:hover,
+body.kid-mode .banner:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 8px 0 rgba(79, 70, 229, 0.2);
+}
+
+/* Success Messages */
+body.kid-mode .success-message {
+    background: linear-gradient(135deg, #4f46e5, #8b5cf6);
+    color: #fff;
+    padding: 1.5rem;
+    border-radius: 20px;
+    text-align: center;
+    animation: bounce 0.5s ease;
+    border: 3px solid #fff;
+    box-shadow: 0 8px 0 rgba(79, 70, 229, 0.2);
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Kid Mode Specific Elements */
+body.kid-mode .task-item {
+    background: #fff;
+    border: 3px solid #4f46e5;
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 0 rgba(79, 70, 229, 0.2);
+    transition: all 0.3s ease;
+}
+
+body.kid-mode .task-item:hover {
+    transform: scale(1.02) rotate(1deg);
+    box-shadow: 0 6px 0 rgba(79, 70, 229, 0.2);
+}
+
+body.kid-mode .task-item.completed {
+    background: linear-gradient(135deg, #4f46e5, #8b5cf6);
+    color: #fff;
+    border-color: #fff;
+}
+
+body.kid-mode .inventory-item {
+    background: #fff;
+    border: 3px solid #4f46e5;
+    border-radius: 20px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 0 rgba(79, 70, 229, 0.2);
+    transition: all 0.3s ease;
+}
+
+body.kid-mode .inventory-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 0.75rem;
+}
+
+body.kid-mode .inventory-item .item-name {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #4f46e5;
+}
+
+/* Kid Mode Modal */
+body.kid-mode .modal-content {
+    background: #fff;
+    border: 3px solid #4f46e5;
+    border-radius: 30px;
+    padding: 2rem;
+    box-shadow: 0 8px 0 rgba(79, 70, 229, 0.2);
+}
+
+body.kid-mode .modal-content h2 {
+    color: #4f46e5;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+body.kid-mode .modal-content .close {
+    color: #4f46e5;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+body.kid-mode .modal-content .close:hover {
+    transform: rotate(90deg) scale(1.1);
+}

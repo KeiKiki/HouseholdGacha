@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="120" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="200" height="120" fill="#f0f0f0"/>
+    
+    <!-- Windows Flag Pattern -->
+    <!-- Top Left (Red) -->
+    <rect x="0" y="0" width="100" height="60" fill="#f25022"/>
+    
+    <!-- Top Right (Green) -->
+    <rect x="100" y="0" width="100" height="60" fill="#7fba00"/>
+    
+    <!-- Bottom Left (Blue) -->
+    <rect x="0" y="60" width="100" height="60" fill="#00a4ef"/>
+    
+    <!-- Bottom Right (Yellow) -->
+    <rect x="100" y="60" width="100" height="60" fill="#ffb900"/>
+</svg>

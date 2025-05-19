@@ -1,0 +1,81 @@
+.random-reward-popup {
+    position: fixed;
+    width: 120px;
+    height: 120px;
+    background: var(--w);
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    border: 3px solid #FFD700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.random-reward-popup.active {
+    opacity: 1;
+    transform: scale(1);
+    animation: float 2s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.popup-icon {
+    font-size: 4rem;
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+    margin-bottom: 0.5rem;
+}
+
+.popup-message {
+    font-size: 0.8rem;
+    color: var(--d);
+    font-weight: 500;
+}
+
+.reward-animation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem 2rem;
+    border-radius: var(--r);
+    box-shadow: var(--sh);
+    animation: fadeInOut 3s ease;
+    z-index: 1001;
+}
+
+.reward-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.reward-icon {
+    font-size: 2rem;
+}
+
+.reward-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--d);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+    20% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+} 

@@ -1,0 +1,16 @@
+.taskbar{position:fixed;bottom:0;left:0;right:0;height:45px;background:#0a246a;display:flex;align-items:center;padding:0 5px;z-index:1000;box-shadow:0 -2px 10px rgba(0,0,0,.1)}
+.start-button,.task-button,.system-tray{height:35px;color:#fff;border:1px solid #0a246a;border-radius:3px;display:flex;align-items:center}
+.start-button{background:linear-gradient(to bottom,#2584d8,#1664ad);padding:0 10px 0 35px;position:relative;cursor:pointer;box-shadow:0 2px 4px rgba(0,0,0,.1);background-image:url('../img/windows-logo.svg');background-repeat:no-repeat;background-size:24px 24px;background-position:5px center;}
+.start-button::after{content:none;}
+.task-buttons{display:flex;flex:1;gap:5px;margin:0 5px}
+.task-button{background:#0a246a;padding:0 15px;min-width:100px;cursor:pointer}
+.system-tray{gap:5px;padding:0 5px;background:#0a246a}
+.start-menu{position:fixed;bottom:45px;left:0;width:230px;background:#fff;border-radius:6px;display:none;z-index:1001;box-shadow:0 2px 8px rgba(32,86,165,.08);padding:4px 0;font:15px 'Segoe UI',Tahoma,Arial,sans-serif;border:none}
+.start-menu.active{display:block}
+.start-menu-item{display:flex;align-items:center;gap:8px;padding:8px 18px;cursor:pointer;color:#222;border-radius:4px;background:none;border:none;width:100%;box-sizing:border-box;font-size:15px}
+.start-menu-item span{flex:1;text-align:left;}
+.start-menu-item i,.start-menu-item .icon{margin-right:2px}
+.start-menu-divider{height:1px;background:#e5e7eb;margin:4px 10px}
+.kid-mode .start-menu{background:#eaf6ff}
+.kid-mode .start-menu-item{color:#1e40af}
+.kid-mode .start-menu-item i,.kid-mode .start-menu-item .icon{color:#3B82F6}
